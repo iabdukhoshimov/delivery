@@ -10,7 +10,6 @@ const UserStorage = {
         if(!user) {
             return false
         }
-
         return true
     },
     IsRegister: async (arg) => {
