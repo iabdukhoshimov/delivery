@@ -8,7 +8,7 @@ module.exports = {
         ],
         [
             {
-                text: 'Заявка на продукцию',
+                text: '',
                 web_app: { url: 'https://google.com' }
             }
         ],
