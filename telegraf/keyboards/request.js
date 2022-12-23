@@ -2,25 +2,13 @@ module.exports = {
     ru: [
         [
             {
-                text: 'Заявка на тест-драйв',
+                text: 'Заявка',
                 web_app: { url: 'https://google.com' }
             }
         ],
         [
             {
                 text: '',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на запасные части',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на сервис',
                 web_app: { url: 'https://google.com' }
             }
         ],
@@ -33,25 +21,13 @@ module.exports = {
     en: [
         [
             {
-                text: 'Заявка на тест-драйв',
+                text: 'Заявка',
                 web_app: { url: 'https://google.com' }
             }
         ],
         [
             {
                 text: 'Заявка на продукцию',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на запасные части',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на сервис',
                 web_app: { url: 'https://google.com' }
             }
         ],
@@ -64,25 +40,13 @@ module.exports = {
     uz: [
         [
             {
-                text: 'Заявка на тест-драйв',
+                text: 'Заявка',
                 web_app: { url: 'https://google.com' }
             }
         ],
         [
             {
                 text: 'Заявка на продукцию',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на запасные части',
-                web_app: { url: 'https://google.com' }
-            }
-        ],
-        [
-            {
-                text: 'Заявка на сервис',
                 web_app: { url: 'https://google.com' }
             }
         ],
