@@ -7,24 +7,24 @@ const home_keyboards = require('../keyboards/home')
 const { home_message } = require('../../helper/constants')
 
 class HomeScene {
-    Home () {
+    Home() {
         const home = new Scene('home');
-        
-        home.enter(async (ctx) => { 
+
+        home.enter(async(ctx) => {
             const chat_id = ctx.message ? ctx.message.chat.id : ctx.chat.id
 
             const user = await UserStorage.FindUser({ chat_id })
-            if(!user) {
+            if (!user) {
                 await ctx.scene.enter('phone')
             }
 
             await ctx.reply(
-                home_message[user.choosen_lang], 
+                home_message[user.choosen_lang],
                 Markup
-                    .keyboard(home_keyboards[user.choosen_lang])
-                    .oneTime()
-                    .resize()
-                    .extra()
+                .keyboard(home_keyboards[user.choosen_lang])
+                .oneTime()
+                .resize()
+                .extra()
             )
         })
         home.on('text', async ctx => {
@@ -32,13 +32,13 @@ class HomeScene {
             const msg = ctx.message.text
 
             const user = await UserStorage.FindUser({ chat_id })
-            if(!user) {
+            if (!user) {
                 await ctx.scene.enter('phone')
             }
 
             const lang = home_keyboards[user.choosen_lang]
 
-            if(msg == lang[0][0]['text']) {
+            if (msg == lang[0][0]['text']) {
                 await ctx.scene.enter('request_application')
                 return
             } else if (msg == lang[7][0]) { // go to LanguageScene
@@ -46,7 +46,41 @@ class HomeScene {
                 return
             }
 
-        })
+            // if user changes the language
+            if (msg == lang[1][0]['text']) {
+                await ctx.reply(
+                    home_message[user.choosen_lang],
+                    Markup
+                    .keyboard(home_keyboards[user.choosen_lang])
+                    .oneTime()
+                    .resize()
+                    .extra()
+                )
+                return
+
+            } else if (msg == lang[2][0]['text']) {
+                await ctx.reply(
+                    home_message[user.choosen_lang],
+                    Markup
+                    .keyboard(home_keyboards[user.choosen_lang])
+                    .oneTime()
+                    .resize()
+                    .extra()
+                )
+                return
+            } else if (msg == lang[3][0]['text']) {
+                await ctx.reply(
+                    home_message[user.choosen_lang],
+                    Markup
+                    .keyboard(home_keyboards[user.choosen_lang])
+                    .oneTime()
+                    .resize()
+                    .extra()
+                )
+                return
+            }
+
+        });
         return home
     }
 }
