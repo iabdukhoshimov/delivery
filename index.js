@@ -11,7 +11,7 @@ const { Stage, session } = Telegraf
 // Scenes
 const HomeScene = require('./telegraf/scenes/home')
 const LanguageScene = require('./telegraf/scenes/languages')
-const PhoneScene= require('./telegraf/scenes/phone')
+const PhoneScene = require('./telegraf/scenes/phone')
 const RequestScene = require('./telegraf/scenes/request')
 
 
@@ -20,6 +20,10 @@ const RequestScene = require('./telegraf/scenes/request')
 
 // Commands
 const startCommand = require('./telegraf/commands/start')
+const restartCommand = require('./telegraf/commands/restart')
+const quitCommand = require('./telegraf/commands/quit')
+const statusCommand = require('./telegraf/commands/status')
+
 
 
 const homeScene = new HomeScene()
@@ -38,10 +42,10 @@ const stages = new Stage([
 bot.use(session())
 bot.use(stages.middleware())
 bot.command('start', startCommand)
-// bot.command('quit', quitCommand)
-// bot.action(/^task:/, taskAction)
-// bot.action(/^old_task:/, oldTaskAction)
-// bot.action(/^status:/, statusAction)
+bot.command('restart', restartCommand)
+bot.command('quit', quitCommand)
+bot.command('status', statusCommand)
+
 bot.launch()
     .then(() => console.log("Telegram bot working globally...🌐"))
     .catch((err) => console.log(err.message))
