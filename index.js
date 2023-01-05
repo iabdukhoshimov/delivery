@@ -23,6 +23,7 @@ const startCommand = require('./telegraf/commands/start')
 const restartCommand = require('./telegraf/commands/restart')
 const quitCommand = require('./telegraf/commands/quit')
 const statusCommand = require('./telegraf/commands/status')
+const logger = require('./config/logger')
 
 
 
@@ -41,10 +42,10 @@ const stages = new Stage([
 // bot.telegram.setMyCommands()
 bot.use(session())
 bot.use(stages.middleware())
-bot.command('start', startCommand)
-bot.command('restart', restartCommand)
-bot.command('quit', quitCommand)
-bot.command('status', statusCommand)
+bot.command('start', startCommand, logger.info("Starting..."));
+bot.command('restart', restartCommand, logger.info("Restarting..."));
+bot.command('quit', quitCommand, logger.info("Quitting..."));
+bot.command('status', statusCommand, logger.info("Status..."));
 
 bot.launch()
     .then(() => console.log("Telegram bot working globally...🌐"))
