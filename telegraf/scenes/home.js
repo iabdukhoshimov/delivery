@@ -46,40 +46,6 @@ class HomeScene {
                 return
             }
 
-            // if user changes the language
-            if (msg == lang[1][0]['text']) {
-                await ctx.reply(
-                    home_message[user.choosen_lang],
-                    Markup
-                    .keyboard(home_keyboards[user.choosen_lang])
-                    .oneTime()
-                    .resize()
-                    .extra()
-                )
-                return
-
-            } else if (msg == lang[2][0]['text']) {
-                await ctx.reply(
-                    home_message[user.choosen_lang],
-                    Markup
-                    .keyboard(home_keyboards[user.choosen_lang])
-                    .oneTime()
-                    .resize()
-                    .extra()
-                )
-                return
-            } else if (msg == lang[3][0]['text']) {
-                await ctx.reply(
-                    home_message[user.choosen_lang],
-                    Markup
-                    .keyboard(home_keyboards[user.choosen_lang])
-                    .oneTime()
-                    .resize()
-                    .extra()
-                )
-                return
-            }
-
         });
         return home
     }

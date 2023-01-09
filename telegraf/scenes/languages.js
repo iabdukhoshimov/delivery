@@ -63,7 +63,6 @@ class LangScene {
                 )
             }
 
-
             await ctx.scene.enter('home');
             return
         });
